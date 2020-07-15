@@ -29,6 +29,7 @@ public:
 
 I don’t think there’s any way around this kind of piss when dealing with GDScript/C++ interoperability. Personally I encapsulate it all into a namespace called “mess”:
 
+#### **`mess.cpp`**
 ```c++
 namespace mess {
 namespace get {
@@ -48,6 +49,7 @@ SampleManager* sample_manager(godot::Node* node)
  
 }}
 ```
+#### **`sample.cpp`**
 ```c++
 void Sample::_ready()
 {
