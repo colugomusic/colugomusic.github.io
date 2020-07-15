@@ -57,7 +57,7 @@ void Sample::_ready()
 }
 ```
 
-You can c-plus-plussify this further by writing a utility function:
+You can c-plus-plussify this further:
 
 #### **`mess.h`**
 ```c++
