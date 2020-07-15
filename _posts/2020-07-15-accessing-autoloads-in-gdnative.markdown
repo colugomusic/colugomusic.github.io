@@ -69,6 +69,8 @@ T* autoload(godot::Node* node, const godot::NodePath path)
 	return godot::Object::cast_to<T>(autoload(node, path));
 }
 
+extern SampleManager* sample_manager(godot::Node* node);
+
 // ...
 
 }}
@@ -106,6 +108,8 @@ T* autoload(godot::Node* node)
 {
 	return godot::Object::cast_to<T>(autoload(node, T::___get_type_name()));
 }
+
+extern SampleManager* sample_manager(godot::Node* node);
 
 // ...
 
