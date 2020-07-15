@@ -41,8 +41,7 @@ Node* autoload(godot::Node* node, godot::NodePath path)
  
 SampleManager* sample_manager(godot::Node* node)
 {
-    return godot::Object::cast_to<SampleManager>(
-        autoload(node, "SampleManager"));
+    return godot::Object::cast_to<SampleManager>(autoload(node, "SampleManager"));
 }
  
 // ...
