@@ -27,7 +27,7 @@ public:
 };
 ```
 
-I don’t think there’s any way around this kind of piss when dealing with GDScript/C++ interoperability. Personally I encapsulate it all into a namespace called “mess”:
+I don’t think there’s any way around this kind of piss when dealing with GDScript/C++ interop. Personally I encapsulate it all into a namespace called “mess”:
 
 #### **`mess.cpp`**
 ```c++
