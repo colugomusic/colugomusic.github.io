@@ -34,7 +34,7 @@ I don’t think there’s any way around this kind of piss when dealing with GDS
 namespace mess {
 namespace get {
  
-Node* autoload(Node* node, NodePath path)
+Node* autoload(godot::Node* node, godot::NodePath path)
 {
     return node->get_tree()->get_root()->get_node(path);
 }
@@ -42,7 +42,7 @@ Node* autoload(Node* node, NodePath path)
 SampleManager* sample_manager(godot::Node* node)
 {
     return godot::Object::cast_to<SampleManager>(
-        mess::get::autoload(node, "SampleManager"));
+        autoload(node, "SampleManager"));
 }
  
 // ...
@@ -55,4 +55,74 @@ void Sample::_ready()
 {
     sample_manager_ = mess::get::sample_manager(this);
 }
+```
+
+You can c-plus-plussify this further by writing a utility function:
+
+#### **`mess.h`**
+```c++
+namespace mess {
+namespace get {
+
+template <class T>
+T* autoload(godot::Node* node, const godot::NodePath path)
+{
+	return godot::Object::cast_to<T>(autoload(node, path));
+}
+
+// ...
+
+}}
+```
+#### **`mess.cpp`**
+```c++
+namespace mess {
+namespace get {
+
+SampleManager* sample_manager(godot::Node* node)
+{
+    return autoload<SampleManager>(node, "SampleManager");
+}
+
+// ...
+
+}}
+```
+
+Having the `path` argument is important because the autoload name might not necessarily be the same as the type name. Often it will be though so you can avoid the potential typo by utilitizing the static `___get_type_name` method which is defined by the `GODOT_CLASS` macro.
+
+#### **`mess.h`**
+```c++
+namespace mess {
+namespace get {
+
+template <class T>
+T* autoload(godot::Node* node, const godot::NodePath path)
+{
+	return godot::Object::cast_to<T>(autoload(node, path));
+}
+
+template <class T>
+T* autoload(godot::Node* node)
+{
+	return godot::Object::cast_to<T>(autoload(node, T::___get_type_name()));
+}
+
+// ...
+
+}}
+```
+#### **`mess.cpp`**
+```c++
+namespace mess {
+namespace get {
+
+SampleManager* sample_manager(godot::Node* node)
+{
+	return autoload<SampleManager>(node);
+}
+
+// ...
+
+}}
 ```
