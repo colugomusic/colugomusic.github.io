@@ -91,7 +91,6 @@ if (upload_needed)
         buffer);
     
     render_data_texture->create_from_image(render_data_image, 0);
-
     material->set_shader_param("data", render_data_texture);
 }
 ```
