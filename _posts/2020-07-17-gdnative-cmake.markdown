@@ -4,7 +4,7 @@ title:  "Building GDNative C++ plugins with CMake"
 ---
 The [official Godot docs](https://godot-es-docs.readthedocs.io/en/latest/tutorials/plugins/gdnative/gdnative-cpp-example.html) provide an example `SConstruct` file for building GDNative plugins. As I understand it the motivations behind using SCons as a build tool over CMake are as follows:
 - Documentation is all hot piss.
-- Really slow because it helpfully re-runs the configuration step every time you do a build.
+- Really slow because it has to re-run the configuration step every time you do a build.
 - Allows you to spend more time doing what you love: trying to figure out how to generate a visual studio project so you can debug.
 
 Despite these benefits some people still prefer using CMake so here is a simple example of how to set up your project.
