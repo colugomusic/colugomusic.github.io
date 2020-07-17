@@ -58,9 +58,9 @@ if (required_buffer_size > 0 && required_buffer_size > buffer_size)
     // a buffer size of 5, for example, will generate a texture like this:
     // ┏━━━┳━━━┓
     // ┃ 0 ┃ 1 ┃ the shader's get_value function will use the data_width
-    // ┠━━━╂━━━┨ uniform to calculate which row and column of the texture
+    // ┣━━━╋━━━┫ uniform to calculate which row and column of the texture
     // ┃ 2 ┃ 3 ┃ to read from for the given buffer index.
-    // ┠━━━╂━━━┨
+    // ┣━━━╋━━━┫
     // ┃ 4 ┃   ┃
     // ┗━━━┻━━━┛
     buffer_width = int(::floor(::sqrt(buffer_size)));
