@@ -33,7 +33,7 @@ In this example the project is set up something like this:
 
 In my project I separate the actual Godot project from the GDNative plugins into `front` and `back` directories respectively, but there's no need to organize things like this if you don't want to.
 
-Here's the `CMakeLists.txt`. This is a stripped down version of the CMakelists I'm using in my project. If you can't read [generator expressions](https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html) then probably your brain is using that space for something less stupid so you should consider yourself blessed.
+Here's the `CMakeLists.txt`. This is a stripped down version of the CMakeLists I'm using in my project. If you can't read [generator expressions](https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html) then probably your brain is using that space for something less stupid so you should consider yourself blessed.
 ```cmake
 cmake_minimum_required(VERSION 3.12)
 project(example_project)
