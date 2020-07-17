@@ -17,16 +17,14 @@ float get_value(int idx)
     int x = idx % data_width;
     int y = idx / data_width;
 
-    float u8 = texelFetch(data, ivec2(x, y), 0).r;
-	
-    return ((u8 * 2.0) - 1.0);
+    return (texelFetch(data, ivec2(x, y), 0).r * 2.0) - 1.0;
 }
 
 // ...
 ```
 I'm going to upload a bunch of floating point values from -1.0 to 1.0. The values will be encoded as unsigned bytes (0-255) and stuffed into the red channel of a `godot::Image::FORMAT_R8` data texture. Obviously the best data format and encoding to use will depend on your project.
 
-The `get_value` function figures out which row and column of the texture contains the indexed value and decodes it back to a float in the range -1.0 to 1.0.
+The `get_value` function figures out which row and column of the texture contains the indexed value, reads that pixel with `texelFetch` and decodes the value back to a float in the range -1.0 to 1.0.
 
 Here's the C++. You can do the same thing with GDScript if you really want. The basic idea will be the same.
 
