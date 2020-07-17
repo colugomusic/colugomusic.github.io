@@ -18,7 +18,7 @@ In this example the project is set up something like this:
  ┃   ┣ 📜example_project.gdnlib
  ┃   ┣ 📜various.gdns
  ┃   ┣ 📜native.gdns
- ┃   ┣ 📜scripts.gdns
+ ┃   ┗ 📜scripts.gdns
  ┗ 📂back
    ┣ 📜CMakeLists.txt
    ┣ 📂submodules
@@ -27,7 +27,7 @@ In this example the project is set up something like this:
    ┗ 📂src
      ┣ 📜various.cpp
      ┣ 📜source.cpp
-     ┣ 📜files.cpp
+     ┗ 📜files.cpp
 ```
 `./back/submodules/GodotNativeTools/godot-cpp/` is cloned from the Github repository and configured as described in the offical docs.
 
