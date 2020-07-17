@@ -62,8 +62,8 @@ if (required_buffer_size > 0 && required_buffer_size > buffer_size)
     buffer_width = int(::floor(::sqrt(buffer_size)));
     buffer_height = int(::ceil(float(buffer_size) / buffer_width));
 
-    material_->set_shader_param("data_width", buffer_width);
-    buffer_.resize(buffer_width * buffer_height);
+    material->set_shader_param("data_width", buffer_width);
+    buffer.resize(buffer_width * buffer_height);
 }
 
 // fill buffer with data
