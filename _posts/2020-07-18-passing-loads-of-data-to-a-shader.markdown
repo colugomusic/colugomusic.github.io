@@ -4,7 +4,7 @@ title:  "Passing loads of data to a shader"
 ---
 ![waveform](/assets/waveform_pitch_editing.png)
 
-Godot's shading language is kind of like a stripped down version of GLSL, and at the time of writing there's no easy way to send large amounts of dynamically sized data to the GPU. You can manage it by packing it all into a `Sampler2D` though.
+Godot's shading language is kind of like a stripped down version of GLSL, and at the time of writing there's no easy way to send large amounts of dynamically sized data to the GPU. You can manage it by packing it all into a `sampler2D` though.
 
 ```glsl
 shader_type canvas_item;
