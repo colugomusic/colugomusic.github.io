@@ -31,8 +31,12 @@ The `get_value` function figures out which row and column of the texture contain
 Here's the C++. You can do the same thing with GDScript if you really want. The basic idea will be the same.
 
 ```c++
-godot::Ref<godot::ShaderMaterial> material;
-godot::PoolByteArray buffer;
+using namespace godot;
+
+// ...
+
+Ref<ShaderMaterial> material;
+PoolByteArray buffer;
 
 int buffer_size;
 int buffer_width;
