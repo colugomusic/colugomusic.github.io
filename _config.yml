@@ -27,6 +27,7 @@ url: "https://colugomusic.github.io" # the base hostname & protocol for your sit
 twitter_username: colugomusic
 show_drafts: false
 future: false
+timezone: Europe/London
 
 # Build settings
 theme: minima
