@@ -44,7 +44,7 @@ int data_height;
 
 // ... calculate required buffer size ...
 
-if (required_buffer_size > 0 && required_buffer_size > buffer_size)
+if (required_buffer_size > buffer_size)
 {
     buffer_size = required_buffer_size;
 
